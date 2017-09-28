@@ -76,7 +76,7 @@
     });
 
     var params = {
-      AR: false,
+      AR: true,
       //fromImage: '/img/HIRO.jpg',
       runRender: false,
       renderer: mathbox.three.renderer,
