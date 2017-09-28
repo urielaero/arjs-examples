@@ -7,13 +7,21 @@
     });
     three = mathbox.three;
 
-    three.camera.position.set(0, 0, 3);
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
 
-    view = mathbox.cartesian({
+    view = mathbox
+    .set({
+      scale: 520,
+      focus: 3,
+    })
+    .camera({
+      proxy: true,
+      position: [-6.320009229020089, 3.3489745289281054, -0.2872281859469791]
+    }).cartesian({
       range: [[-2, 2], [-1, 1], [-1, 1]],
       scale: [2, 1, 1],
     });
+
 
     view.interval({
       id: 'sampler',
@@ -35,10 +43,7 @@
       length:  3,
       overlap: 0,
     });
-    view.join({
-      axis:   'x',
-      overlap: 1,
-    });
+
 
     view.line({
       color: 0x3090FF,
@@ -61,6 +66,7 @@
 
     var params = {
       AR: true,
+      fromImage: '/img/HIRO.jpg',
       renderer: mathbox.three.renderer
     }
 

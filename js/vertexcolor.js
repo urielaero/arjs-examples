@@ -16,7 +16,7 @@
     })
     .camera({
       proxy: true,
-      position: [-0.5504327822436459, 0.3992990380892045, -5.1514642608109575]
+      position: [0.03873908969484122, 6.185452745368619, 9.525684942183485]
     })
     .cartesian({
       range: [[0, 1], [0, 1], [0, 1]],
@@ -107,13 +107,12 @@
     });
 
     var params = {
-      AR: true,
+      AR: false,
       renderer: mathbox.three.renderer
     }
-    console.log(mathbox);
-    /*
+    window.scene = mathbox.three.scene;
+    window.mathbox = mathbox;
     var  arTool = new window.ArTool(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-    */
 
 })();

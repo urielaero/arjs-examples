@@ -43,7 +43,7 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 		@param {number} height The height of the images to process.
 		@param {ARCameraParam | string} camera The ARCameraParam to use for image processing. If this is a string, the ARController treats it as an URL and tries to load it as a ARCameraParam definition file, calling ARController#onload on success. 
 	*/
-	var ARController = function(width, height, camera) {
+	var ARController = function(width, height, camera, canvas, ctx) {
 		var id;
 		var w = width, h = height;
 
@@ -64,10 +64,10 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 		this.barcodeMarkers = {};
 		this.transform_mat = new Float32Array(16);
 
-		this.canvas = document.createElement('canvas');
+		this.canvas = canvas || document.createElement('canvas');
 		this.canvas.width = w;
 		this.canvas.height = h;
-		this.ctx = this.canvas.getContext('2d');
+		this.ctx =  ctx || this.canvas.getContext('2d');
 
 		this.videoWidth = w;
 		this.videoHeight = h;
@@ -998,7 +998,6 @@ var Qb=[Ik,Zh,_h,Qj,Qi,Pi,Ri,Ag,sg,qg,rg,yg,kh,jh,Oi,Mj];var Rb=[Jk,ki,ji,gi];va
 		if (!image) {
 			image = this.image;
 		}
-
 
 		if (this.orientation === 'portrait') {
 			this.ctx.save();
@@ -5161,6 +5160,8 @@ ARjs.Context = THREEx.ArToolkitContext = function(parameters){
 		// enable image smoothing or not for canvas copy - default to true
 		// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
 		imageSmoothingEnabled : false,
+    canvas: null,
+    ctx: null,
 	}
 	// parameters sanity check
 	console.assert(['artoolkit', 'aruco', 'tango'].indexOf(this.parameters.trackingBackend) !== -1, 'invalid parameter trackingBackend', this.parameters.trackingBackend)
@@ -5178,6 +5179,7 @@ ARjs.Context = THREEx.ArToolkitContext = function(parameters){
 	//		setParameters
 	//////////////////////////////////////////////////////////////////////////////
 	setParameters(parameters)
+  console.log('para', parameters);
 	function setParameters(parameters){
 		if( parameters === undefined )	return
 		for( var key in parameters ){
@@ -5325,7 +5327,7 @@ ARjs.Context.prototype._initArtoolkit = function(onCompleted){
 	// get cameraParameters
         var cameraParameters = new ARCameraParam(_this.parameters.cameraParametersUrl, function(){
         	// init controller
-                var arController = new ARController(_this.parameters.canvasWidth, _this.parameters.canvasHeight, cameraParameters);
+                var arController = new ARController(_this.parameters.canvasWidth, _this.parameters.canvasHeight, cameraParameters, _this.parameters.canvas, _this.parameters.ctx);
                 _this.arController = arController
                 
 		// honor this.parameters.imageSmoothingEnabled
