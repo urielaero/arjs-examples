@@ -7,7 +7,7 @@
       },
       camera: {
         fov: 45,
-        type: 'orthographic',
+        //type: 'orthographic',
         proxy: true,
       }
     });
@@ -25,7 +25,7 @@
 
     view = mathbox
     .set({
-      scale: 1920,
+      scale: 420,
       focus: 1,
     })
     //.group()
