@@ -8,7 +8,7 @@
       camera: {
         fov: 45,
         //type: 'orthographic',
-        proxy: true,
+        //proxy: true,
       }
     });
     three = mathbox.three;
@@ -25,7 +25,7 @@
 
     view = mathbox
     .set({
-      scale: 420,
+      scale: 720,
       focus: 1,
     })
     //.group()
@@ -75,9 +75,8 @@
       colors: "#colors",
     });
 
-    console.log('math', mathbox.mathbox._context);
     var params = {
-      AR: true,
+      AR: false,
       //fromImage: '/img/HIRO.jpg',
       runRender: false,
       renderer: mathbox.three.renderer,
