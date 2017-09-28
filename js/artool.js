@@ -1,6 +1,7 @@
 ;(function(window) {
   function Ar(camera, scene, params) {
-    THREEx.ArToolkitContext.baseURL = './../data';
+    //THREEx.ArToolkitContext.baseURL = './../data';
+    THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
     var self = this;
     self.params = params;
     self.context = params.context;
