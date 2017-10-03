@@ -2,6 +2,7 @@
 //		Init
 //////////////////////////////////////////////////////////////////////////////////
 THREEx.ArToolkitContext.baseURL = './../data'
+//THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
 // init renderer
 var renderer	= new THREE.WebGLRenderer({
 	antialias: true,
@@ -25,7 +26,7 @@ var scene	= new THREE.Scene();
 //////////////////////////////////////////////////////////////////////////////////
 
 // Create a camera
-var camera = new THREE.Camera();
+var camera = new THREE.OrthographicCamera();
 scene.add(camera);
 
 ////////////////////////////////////////////////////////////////////////////////

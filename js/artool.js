@@ -1,7 +1,7 @@
 ;(function(window) {
   function Ar(camera, scene, params) {
-    //THREEx.ArToolkitContext.baseURL = './../data';
-    THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
+    THREEx.ArToolkitContext.baseURL = './../data';
+    //THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
     var self = this;
     self.params = params;
     self.context = params.context;
@@ -107,8 +107,9 @@
 
       //por alguna razon no lo hace si le paso el que viene de mathbox.
       var car = self.params.mathbox.select('cartesian');
+      //modelViewMatrix...
       camera.matrix.copy(cameraFake.matrix);
-      camera.matrix.decompose(camera.position, camera.quaternion, camera.scale)
+      camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
       //self.params.mathbox.select('cartesian').set('position', [cameraFake.position.x, cameraFake.position.y, cameraFake.position.z]);
       //self.params.mathbox.inspect();
       camera.visible = cameraFake.visible;

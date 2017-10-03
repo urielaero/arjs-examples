@@ -1,6 +1,6 @@
 ;(function() {
 
-    mathbox = mathBox({
+    mathbox = mathBox(/*{
       plugins: ['core', 'controls', 'cursor'],
       controls: {
         klass: THREE.OrbitControls
@@ -8,12 +8,17 @@
       camera: {
         fov: 45,
         //type: 'orthographic',
-        //proxy: true,
+        proxy: true,
+        position: [3,3,3]
       }
+    }*/);
+    mathbox.camera({
+      proxy: true,
+      position: [0, 0, 0]
     });
     three = mathbox.three;
 
-    three.camera.position.set(-0.15, 0.15, 3.6);
+    //three.camera.position.set(-0.15, 0.15, 3.6);
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
 
     colors = {
@@ -85,7 +90,7 @@
     };
     var  arTool = new window.ArTool(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-    window.scene = mathbox.three.scene;
-    window.math = mathbox;
+    //window.scene = mathbox.three.scene;
+    //window.math = mathbox;
 
 })();
