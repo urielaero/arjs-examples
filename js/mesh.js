@@ -22,7 +22,8 @@
     AR: true,
     renderFcts: [function(delta){
       mesh.rotation.x += Math.PI*delta
-    }]
+    }],
+    runRender: true
   };
 
   arTool = new window.ArTool(camera, scene, params)

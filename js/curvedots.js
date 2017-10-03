@@ -65,7 +65,7 @@
     window.addEventListener('message', messageHandler);
 
     var params = {
-      AR: true,
+      AR: false,
       fromImage: '/img/HIRO.jpg',
       renderer: mathbox.three.renderer
     }

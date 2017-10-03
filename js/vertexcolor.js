@@ -1,10 +1,5 @@
 ;(function() {
-    mathbox = mathBox({
-      plugins: ['core', 'controls', 'cursor', 'stats'],
-      controls: {
-        klass: THREE.OrbitControls
-      },
-    });
+    mathbox = mathBox();
     three = mathbox.three;
 
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
@@ -107,7 +102,7 @@
     });
 
     var params = {
-      AR: false,
+      AR: true,
       renderer: mathbox.three.renderer
     }
     window.scene = mathbox.three.scene;

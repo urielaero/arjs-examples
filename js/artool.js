@@ -1,7 +1,9 @@
 ;(function(window) {
   function Ar(camera, scene, params) {
     THREEx.ArToolkitContext.baseURL = './../data';
-    //THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
+    if (window.location.origin.indexOf('github.io') != -1) {
+      THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';
+    }
     var self = this;
     self.params = params;
     self.context = params.context;
@@ -95,6 +97,7 @@
     // initialize it
     arToolkitContext.init(function onCompleted(){
 	    // copy projection matrix to camera
+      cameraFake.projectionMatrix.copy(arToolkitContext.getProjectionMatrix());
 	    camera.projectionMatrix.copy( arToolkitContext.getProjectionMatrix() );
     });
 
@@ -106,10 +109,15 @@
 	    // update scene.visible if the marker is seen
 
       //por alguna razon no lo hace si le paso el que viene de mathbox.
-      var car = self.params.mathbox.select('cartesian');
+      //var car = self.params.mathbox.select('cartesian');
       //modelViewMatrix...
+
       camera.matrix.copy(cameraFake.matrix);
+      //console.log('fake.x', cameraFake.matrix.elements[12])
+      //camera.matrix.elements[12] *= 2;
       camera.matrix.decompose(camera.position, camera.quaternion, camera.scale);
+      //camera.position.setX(camera.position.x*2);
+
       //self.params.mathbox.select('cartesian').set('position', [cameraFake.position.x, cameraFake.position.y, cameraFake.position.z]);
       //self.params.mathbox.inspect();
       camera.visible = cameraFake.visible;

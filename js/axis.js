@@ -18,7 +18,6 @@
     });
     three = mathbox.three;
 
-    //three.camera.position.set(-0.15, 0.15, 3.6);
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
 
     colors = {
@@ -88,6 +87,9 @@
       context: mathbox.mathbox._context,
       mathbox: mathbox
     };
+
+    //if (!params.AR) three.camera.position.set(-0.15, 0.15, 3.6);
+
     var  arTool = new window.ArTool(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
     //window.scene = mathbox.three.scene;
