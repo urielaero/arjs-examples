@@ -90,7 +90,7 @@
     // create atToolkitContext
     var arToolkitContext = new THREEx.ArToolkitContext({
       cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '/markers/camera_para.dat',
-      detectionMode: 'mono',
+      detectionMode: 'mono_and_matrix'//'mono',
       //canvas: self.params.context.canvas, 
       //ctx: self.params.context 
     });

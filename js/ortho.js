@@ -1,13 +1,12 @@
 ;(function() {
-    mathbox = mathBox({
-      plugins: ['core', 'controls', 'cursor'],
-      controls: {
-        klass: THREE.OrbitControls
-      },
+    mathbox = mathBox();
+    mathbox.camera({
+      proxy: true,
+      position: [0, 0, 0]
     });
     three = mathbox.three;
 
-    three.camera.position.set(2.3, 1, 2);
+    //three.camera.position.set(2.3, 1, 2);
     three.renderer.setClearColor(new THREE.Color(0xFFFFFF), 1.0);
 
     time = 0
@@ -66,7 +65,7 @@
 
     view = mathbox
       .unit({
-        scale: 500,
+        scale: 1700,
       })
       .stereographic4({
         range: [[-4, 4], [-4, 4], [-4, 4], [-1, 1]],

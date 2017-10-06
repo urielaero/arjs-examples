@@ -105,6 +105,8 @@
       AR: true,
       renderer: mathbox.three.renderer
     }
+
+    if (!params.AR) three.camera.position.set(-0.15, 0.15, 3.6);
     window.scene = mathbox.three.scene;
     window.mathbox = mathbox;
     var  arTool = new window.ArTool(mathbox.three.camera, mathbox.three.scene, params);
