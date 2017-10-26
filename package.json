@@ -1,0 +1,18 @@
+{
+  "name": "artool",
+  "version": "0.0.0",
+  "description": "artool api for mathbox and arjs",
+  "main": "js/artool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urielaero/mathbox-arjs.git"
+  },
+  "author": "aero.uriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/urielaero/mathbox-arjs/issues"
+  }
+}
