@@ -174,4 +174,15 @@
             {};
 
   root.ArTool = Ar;
+
+
+  if (typeof exports != 'undefined' && !exports.nodeType) {
+    if (typeof module != 'undefined' && !module.nodeType && module.exports) {
+      exports = module.exports = Ar;
+    }
+    exports.Ar = Ar;
+  } else {
+    root.Ar = Ar;
+  }
+
 })(window);
