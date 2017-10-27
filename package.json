@@ -1,6 +1,6 @@
 {
   "name": "artool",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "artool api for mathbox and arjs",
   "main": "js/min.js",
   "scripts": {
