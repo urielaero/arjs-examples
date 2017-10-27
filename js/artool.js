@@ -178,8 +178,10 @@
 
   if (typeof exports != 'undefined' && !exports.nodeType) {
     if (typeof module != 'undefined' && !module.nodeType && module.exports) {
-      exports = module.exports = Ar;
+      exports = module.exports || {};
+      exports.Ar = Ar;
     }
+    exports = exports || {};
     exports.Ar = Ar;
   } else {
     root.Ar = Ar;
