@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MathBox - Axis</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<!-- three.js library -->
+<script src="./build/mathbox-bundle.js"></script>
+<!-- ar.js -->
+<script src="./build/ar.js"></script>
+</head>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+<div>
+  <script src="js/artool.js?v=10121212"></script>
+
+
+  <!--
+  <script src="js/axis.js?v=9012"></script>
+  -->
+  <!--
+
+  <script src="js/curvedots.js"></script>
+
+  <script src="js/vertexcolor.js"></script>
+  -->
+  <script>
+    function script(url) {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = url;
+      var x = document.getElementsByTagName('head')[0];
+      x.appendChild(s);
+    }
+    var src = 'js/' + location.search.replace('?id=','');
+    script(src);
+    console.log('src', src);
+  </script>
+</div></body>
+</html>

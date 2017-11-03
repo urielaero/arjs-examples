@@ -14,5 +14,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/urielaero/mathbox-arjs/issues"
+  },
+  "dependencies": {
+    "mathbox": "^0.1.0"
   }
 }

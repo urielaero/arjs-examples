@@ -168,23 +168,6 @@
     })
   }
 
-  var root = typeof self == 'object' && self.self === self && self ||
-            typeof global == 'object' && global.global === global && global ||
-            this ||
-            {};
-
-  root.ArTool = Ar;
-
-
-  if (typeof exports != 'undefined' && !exports.nodeType) {
-    if (typeof module != 'undefined' && !module.nodeType && module.exports) {
-      exports = module.exports || {};
-      exports.Ar = Ar;
-    }
-    exports = exports || {};
-    exports.Ar = Ar;
-  } else {
-    root.Ar = Ar;
-  }
+  window.Ar = Ar;
 
 })(window);
