@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Ejemplos",
+    "description": "ejemplos...",
+    "id": "0",
+    "content": [
+      {
+        "name": "Axis",
+        "preview": "//urielaero.github.io/arjs-examples/img/previews/a1.png",
+        "id": "axis.js"
+      },
+      {
+        "name": "Vertex Color",
+        "preview": "//urielaero.github.io/arjs-examples/img/previews/s1.png",
+        "id": "vertexcolor.js"
+      },
+      {
+        "name": "Hopf",
+        "preview": "//urielaero.github.io/arjs-examples/img/previews/o1.png",
+        "id": "ortho.js"
+      }
+    ]
+  },
+  {
+    "name": "Calculo Vectorial",
+    "description": "ejemplos...",
+    "id": "1",
+    "content": [
+      {
+        "name": "Vectores/Axis",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
+        "id": "v1.js"
+      },
+      {
+        "name": "Vectores/Axis/Gridx1",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
+        "id": "v2.js"
+      },
+      {
+        "name": "Vectores/Axis/Gridx2",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v3.png",
+        "id": "v3.js"
+      }
+    ]
+  }
+]
