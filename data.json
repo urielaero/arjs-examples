@@ -29,17 +29,22 @@
       {
         "name": "Vectores/Axis",
         "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
-        "id": "v1.js"
+        "id": "vec1.js"
       },
       {
         "name": "Vectores/Axis/Gridx1",
         "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
-        "id": "v2.js"
+        "id": "vec2.js"
       },
       {
         "name": "Vectores/Axis/Gridx2",
         "preview": "https://urielaero.github.io/arjs-examples/img/previews/v3.png",
-        "id": "v3.js"
+        "id": "vec3.js"
+      },
+      {
+        "name": "Campos electricos",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/e1.png",
+        "id": "elec2.js"
       }
     ]
   }
