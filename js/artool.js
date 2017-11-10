@@ -92,10 +92,8 @@
       cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '/markers/camera_para.dat',
       detectionMode: 'mono', //'mono',
       maxDetectionRate: 40,
-      canvasWidth: 340,
+      canvasWidth: 340, //mobile eficience
       canvasHeight: 280
-      //canvas: self.params.context.canvas, 
-      //ctx: self.params.context 
     });
     // initialize it
     arToolkitContext.init(function onCompleted(){
