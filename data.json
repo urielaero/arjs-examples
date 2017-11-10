@@ -28,12 +28,12 @@
     "content": [
       {
         "name": "Vectores/Axis",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
         "id": "vec1.js"
       },
       {
         "name": "Vectores/Axis/Gridx1",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
         "id": "vec2.js"
       },
       {
