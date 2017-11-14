@@ -64,5 +64,42 @@
         "id": "p3.js"
       }
     ]
+  },
+  {
+    "name": "Gráficos de Ecuaciones Paramétricas",
+    "description": "x = cos(a*t) - cos(bt)^j; y = sin(ct)-sin(dt)^k",
+    "id": "3",
+    "content": [
+      {
+        "name": "a = 1; b = 2; c = 1; d = 2;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p4.png",
+        "id": "p4.js"
+      },
+      {
+        "name": "a = 2; b = 1; c = 2; d = 1;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p5.png",
+        "id": "p5.js"
+      },
+      {
+        "name": "a = 1; b = 3; c = 1; d = 3;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p6.png",
+        "id": "p6.js"
+      },
+      {
+        "name": "a = 3; b = 1; c = 3; d = 1;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p7.png",
+        "id": "p7.js"
+      },
+      {
+        "name": "a = 1; b = 7; c = 1; d = 7;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p8.png",
+        "id": "p8.js"
+      },
+      {
+        "name": "a = 1; b = 2; c = 1; d = 3;",
+        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p9.png",
+        "id": "p9.js"
+      }
+    ]
   }
 ]
