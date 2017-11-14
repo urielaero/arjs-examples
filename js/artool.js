@@ -1,4 +1,16 @@
 ;(function(window) {
+
+  function instanceMathBox() {
+    var mathbox = mathBox({
+      plugins: ['core', 'controls', 'cursor'],
+      controls: {
+        klass: THREE.OrbitControls
+      }
+    });
+
+    return mathbox;
+  }
+
   function Ar(camera, scene, params) {
     THREEx.ArToolkitContext.baseURL = './../data';
     if (window.location.origin.indexOf('github.io') != -1) {
@@ -167,5 +179,6 @@
   }
 
   window.Ar = Ar;
+  window.instanceMathBox = instanceMathBox;
 
 })(window);

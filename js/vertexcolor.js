@@ -102,7 +102,7 @@
     });
 
     var params = {
-      AR: true,
+      AR: false,
       renderer: mathbox.three.renderer
     }
 

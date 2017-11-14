@@ -9,38 +9,27 @@
     return p*n;
   }
 
-  //p1 -> x = 2, y = 0;
-  //p2 -> x = 3, y = 4;
-  var Q1 = [[-15, 2, 0], [5, 3, 4]];//[q, x, y]
-  var N = 5;
-  var Ex = [];
-  var Ey = [];
-
-  for (var i=0; i<N; i++) {
-    var exs = [];
-    var eys = [];
-    for (var j=0; j<N; j++) {
-      var ex = 0;
-      var ey = 0;
-      for(var d=0; d<Q1.length;d++) {
-        var dat = Q1[d];
-        var c = dat[0] * (i-dat[1]) / mPow((mPow((i-dat[1]), 2) + (mPow(j-dat[2], 2))), 1.5);
-        ex += c;
-        if (i==2 && j == 0) {
-          console.log('b', mPow((mPow((i-dat[1]), 2) + (mPow(j-dat[2], 2))), 1.5));
-          console.log('c', c);
-        }
-        ey += dat[0] * (j-dat[1]) / mPow((mPow((i-dat[1]), 2) + (mPow(j-dat[2], 2))), 1.5);
-      }
-      exs.push(ex);
-      eys.push(ey);
-    }
-    Ex.push(exs);
-    Ey.push(eys);
+  function euclide(q1, q2) { 
+    //r
+    var x = q1[0] - q2[0];
+    var y = q1[1] - q2[1];
+    var z = q1[2] - q2[2];
+    //console.log(x, y, z);
+    x = Math.pow(x, 2);
+    y = Math.pow(y, 2);
+    z = Math.pow(z, 2);
+    return Math.sqrt(x+y+z);
   }
 
-  console.log('Ex', Ex);
-  console.log('Ey', Ey);
+  function vUnitario(q1, q2) {
+    var r = euclide(q1, q2);
+    var x = (q1[0] - q2[0]);
+    var y = (q1[1] - q2[1]);
+    var z = (q1[2] - q2[2]);
+    return [x/r, y/r, z/r];
+  }
+
+  window.vu = vUnitario;
 
 
   mathbox = mathBox({
@@ -59,7 +48,7 @@
     proxy: true,
     position: [0, 0, 0]
   });
-  three = mathbox.three; 
+  three = mathbox.three;
 
 
   view = mathbox
@@ -71,20 +60,38 @@
     proxy: true,
     position: [-6.320009229020089, 3.3489745289281054, -0.2872281859469791]
   }).cartesian({
-    range: [[0, 1], [0, 1], [0, 1]],
+    range: [[-30, 30], [-30, 30], [-3, 3]],
     scale: [1, 1, 1],
   });
 
+  var charges = [
+    [10, 10, 0],//q1 -> 10
+    [20, 10, 0],//q2 -> -10
+  ];
   var vol = view.volume({
-    id: 'mainVolume',
-    width:  5,
-    height: 5,
-    depth:  1,
+    width:  60,
+    height: 30,
+    depth:  7,
     expr: function (emit, x, y, z, i, j, k, t) {
-      var ex = Ex[i][j];
-      var ey = Ey[i][j];
-      emit(0.5, 0, z); //inicio
-      emit(0.5 + ex, 0 + ey, z); // fin
+      /*vecor 1*/
+      //z = 0;
+      var q = 5;
+      var r = euclide(charges[0], [x, y, z]);
+      var vu = vUnitario(charges[0], [x, y, z]);
+      var nX = (q/Math.pow(r, 2))*vu[0];
+      var nY = (q/Math.pow(r, 2))*vu[1];
+      var nZ = (q/Math.pow(r, 2))*vu[2];
+
+      /*vector 2*/
+      var q2 = -5;
+      var r2 = euclide(charges[1], [x, y, z]);
+      var vu2 = vUnitario(charges[1], [x, y, z]);
+      var nX2 = q2/Math.pow(r2, 2)*vu2[0];
+      var nY2 = q2/Math.pow(r2, 2)*vu2[1];
+      var nZ2 = q2/Math.pow(r2, 2)*vu2[2];
+
+      emit(x, y, z); //inicio
+      emit(x + nX + nX2, y + nY + nY2, z + nZ + nZ2); // fin
     },
     items: 2, //2*emit
     channels: 3,//emit(1, 2, 3)
@@ -94,33 +101,38 @@
   view.vector({
     color: 0x3090FF,
     width: 1,
-    size: 4,
+    size: 3,
     end: true,
+    //stroke: 'dashed',
     zWrite: false,
+    depth: 0.5,
     blending: THREE.AdditiveBlending,
   });
 
- view.volume({
-    width:  5,
-    height: 5,
-    depth:  1,
-    expr: function (emit, x, y, z, i, j, k, t) {
-      var ex = Ex[i][j];
-      var ey = Ey[i][j];
-      emit(0.75, 1, z); //inicio
-      emit(0.75 + ex, 1 + ey, z); // fin
-    },
-    items: 2, //2*emit
-    channels: 3,//emit(1, 2, 3)
+  view.array({
+    data: charges[1],
+    channels: 3
   });
 
-  view.vector({
-    color: 0x3090FF,
-    width: 1,
-    size: 4,
-    end: true,
-    zWrite: false,
-    blending: THREE.AdditiveBlending,
+  view.point({
+    color: 'red',
+    size: 5,
+    depth: 1,
+    shape: 'circle',
+    zBias: 50
+  });
+
+  view.array({
+    data: charges[0],
+    channels: 3
+  });
+
+  view.point({
+    color: 'blue',
+    size: 5,
+    depth: 1,
+    shape: 'circle',
+    zBias: 50
   });
 
   //x = 2, y = 0;
@@ -134,49 +146,7 @@
   });
   */
 
-  view.volume({
-    width: 5,
-    height: 5,
-    depth: 1,
-    expr: function (emit, x, y, z, i, j, k, t) {
-      if (i == 2 && j === 0) {
-        emit(x, y, z);
-      }
-    },
-    items: 1,
-    channels: 3,
 
-  });
-
-  view.point({
-    color: 'blue',
-    size: 15,
-    depth: 0.5,
-    shape: 'circle',
-    zBias: 50
-  });
-
-  view.volume({
-    width: 5,
-    height: 5,
-    depth: 1,
-    expr: function (emit, x, y, z, i, j, k, t) {
-      if (i== 3 && j == 4) {
-        emit(x, y, z);
-      }
-    },
-    items: 1,
-    channels: 3,
-  });
-
-
-  view.point({
-    color: 'red',
-    size: 15,
-    depth: 0.5,
-    shape: 'circle',
-    zBias: 50
-  });
 
   // x = 3, y = 4;
   /*
@@ -207,7 +177,7 @@
     mathbox: mathbox
   };
 
-  if (!params.AR) three.camera.position.set(-0.15, 0.15, 3.6);
+  if (!params.AR) three.camera.position.set(1.9235285045174615, 0.7048641117795541, -0.10372284520330993);
 
   var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
   arTool.animate();
