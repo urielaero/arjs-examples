@@ -69,10 +69,10 @@
     "id": "2",
     "topics": [
       {
-        "name": "Hélices",
+        "name": "Básicas",
         "content": [
           {
-            "name": "Hélice estática",
+            "name": "Hélice",
             "preview": "https://urielaero.github.io/arjs-examples/img/previews/p2.png",
             "id": "p2.js"
           },
