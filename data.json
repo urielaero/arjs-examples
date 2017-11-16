@@ -1,104 +1,122 @@
 [
   {
     "name": "Ejemplos",
-    "description": "ejemplos...",
+    "description": "Ejemplos variados",
     "id": "0",
-    "content": [
+    "topics": [
       {
-        "name": "Axis",
-        "preview": "//urielaero.github.io/arjs-examples/img/previews/a1.png",
-        "id": "axis.js"
-      },
-      {
-        "name": "Vertex Color",
-        "preview": "//urielaero.github.io/arjs-examples/img/previews/s1.png",
-        "id": "vertexcolor.js"
-      },
-      {
-        "name": "Hopf",
-        "preview": "//urielaero.github.io/arjs-examples/img/previews/o1.png",
-        "id": "ortho.js"
+        "name": "Ejemplos Variados",
+        "content": [
+          {
+            "name": "Axis",
+            "preview": "//urielaero.github.io/arjs-examples/img/previews/a1.png",
+            "id": "axis.js"
+          },
+          {
+            "name": "Vertex Color",
+            "preview": "//urielaero.github.io/arjs-examples/img/previews/s1.png",
+            "id": "vertexcolor.js"
+          },
+          {
+            "name": "Hopf",
+            "preview": "//urielaero.github.io/arjs-examples/img/previews/o1.png",
+            "id": "ortho.js"
+          }
+        ]
       }
     ]
   },
   {
     "name": "Calculo Vectorial",
-    "description": "ejemplos...",
+    "description": "Ejemplos de Cálculo Vectorial",
     "id": "1",
-    "content": [
+    "topics": [
       {
-        "name": "Vectores/Axis",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
-        "id": "vec1.js"
+        "name": "Vectores",
+        "content": [
+          {
+            "name": "Axis",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
+            "id": "vec1.js"
+          },
+          {
+            "name": "Axis/Gridx1",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
+            "id": "vec2.js"
+          },
+          {
+            "name": "Axis/Gridx2",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/v3.png",
+            "id": "vec3.js"
+          }
+        ]
       },
       {
-        "name": "Vectores/Axis/Gridx1",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
-        "id": "vec2.js"
-      },
-      {
-        "name": "Vectores/Axis/Gridx2",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/v3.png",
-        "id": "vec3.js"
-      },
-      {
-        "name": "Campos electricos",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/e1.png",
-        "id": "elec2.js"
+        "name": "Campos eléctricos",
+        "content": [
+          {
+            "name": "Campo eléctrico",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/e1.png",
+            "id": "elec.js"
+          }
+        ]
       }
     ]
   },
   {
     "name": "Gráficos de Ecuaciones Paramétricas",
-    "description": "ejemplos...",
+    "description": "Hélice | Espira | otros",
     "id": "2",
-    "content": [
+    "topics": [
       {
-        "name": "Hélice estática",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p2.png",
-        "id": "p2.js"
+        "name": "Hélices",
+        "content": [
+          {
+            "name": "Hélice estática",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p2.png",
+            "id": "p2.js"
+          },
+          {
+            "name": "Espiral",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p3.png",
+            "id": "p3.js"
+          }
+        ]
       },
       {
-        "name": "Espiral",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p3.png",
-        "id": "p3.js"
-      }
-    ]
-  },
-  {
-    "name": "Gráficos de Ecuaciones Paramétricas",
-    "description": "x = cos(a*t) - cos(bt)^j; y = sin(ct)-sin(dt)^k",
-    "id": "3",
-    "content": [
-      {
-        "name": "a = 1; b = 2; c = 1; d = 2;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p4.png",
-        "id": "p4.js"
-      },
-      {
-        "name": "a = 2; b = 1; c = 2; d = 1;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p5.png",
-        "id": "p5.js"
-      },
-      {
-        "name": "a = 1; b = 3; c = 1; d = 3;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p6.png",
-        "id": "p6.js"
-      },
-      {
-        "name": "a = 3; b = 1; c = 3; d = 1;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p7.png",
-        "id": "p7.js"
-      },
-      {
-        "name": "a = 1; b = 7; c = 1; d = 7;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p8.png",
-        "id": "p8.js"
-      },
-      {
-        "name": "a = 1; b = 2; c = 1; d = 3;",
-        "preview": "https://urielaero.github.io/arjs-examples/img/previews/p9.png",
-        "id": "p9.js"
+        "name": "Parametrizadas | x = cos(a*t) - cos(bt)^j; y = sin(ct)-sin(dt)^k",
+        "content": [
+          {
+            "name": "a = 1; b = 2; c = 1; d = 2;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p4.png",
+            "id": "p4.js"
+          },
+          {
+            "name": "a = 2; b = 1; c = 2; d = 1;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p5.png",
+            "id": "p5.js"
+          },
+          {
+            "name": "a = 1; b = 3; c = 1; d = 3;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p6.png",
+            "id": "p6.js"
+          },
+          {
+            "name": "a = 3; b = 1; c = 3; d = 1;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p7.png",
+            "id": "p7.js"
+          },
+          {
+            "name": "a = 1; b = 7; c = 1; d = 7;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p8.png",
+            "id": "p8.js"
+          },
+          {
+            "name": "a = 1; b = 2; c = 1; d = 3;",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/p9.png",
+            "id": "p9.js"
+          }
+        ]
       }
     ]
   }
