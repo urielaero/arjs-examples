@@ -58,8 +58,11 @@
   })
   .camera({
     proxy: true,
-    position: [-6.320009229020089, 3.3489745289281054, -0.2872281859469791]
+    //position: [-6.320009229020089, 3.3489745289281054, -0.2872281859469791]
+    position: [0.03873908969484122, 6.185452745368619, 9.525684942183485]
   }).cartesian({
+    id: 'mainCartesian',
+    position:[-0.5,0,0],
     range: [[-30, 30], [-30, 30], [-3, 3]],
     scale: [1, 1, 1],
   });
@@ -169,7 +172,7 @@
   */
 
   var params = {
-    AR: false,
+    AR: true,
     //fromImage: '/img/HIRO.jpg',
     runRender: false,
     renderer: mathbox.three.renderer,

@@ -56,7 +56,7 @@
         "content": [
           {
             "name": "Campo eléctrico",
-            "preview": "https://urielaero.github.io/arjs-examples/img/previews/e1.png",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/elec.png",
             "id": "elec.js"
           }
         ]
@@ -119,5 +119,47 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Gráficas de curvas de nivel",
+    "description": "Función de Rastrigin | De Jongs | hyper-ellipsoid",
+    "id": "3",
+    "topics": [
+      {
+        "name": "Visualización de maximos y minimos",
+        "content": [
+          {
+            "name": "Función de Rastrigin",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia1.png",
+            "id": "ia1.js"
+          },
+          {
+            "name": "Función De Jongs",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia2.png",
+            "id": "ia2.js"
+          },{
+            "name": "Función hyper-ellipsoid",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia3.png",
+            "id": "ia3.js"
+          }
+        ]
+      },
+      {
+        "name": "Ejemplos",
+        "content": [
+          {
+            "name": "Plano",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia4.png",
+            "id": "ia4.js"
+          },
+          {
+            "name": "Cilindro",
+            "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia5.png",
+            "id": "ia5.js"
+          }
+        ]
+      }
+    ]
   }
+
 ]

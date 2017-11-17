@@ -24,6 +24,7 @@
 
   view = view
   .cartesian({
+    id: "mainCartesian",
     //range: [[-1, 1], [-1, 1], [-1, 1]],
     scale: [0.5, 0.5, 0.5],
     position: [0, -1, 0]
@@ -132,5 +133,24 @@
   window.mathbox = mathbox;
   var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
   arTool.animate();
+
+  window.onload = function(e){
+    document.getElementById('ui').style.display = 'block';
+    document.getElementById('incrementScale').addEventListener("click", function(){
+      var scale = window.mathbox.select('#mainCartesian').get('scale');
+      var mag = 0.2;
+      window.mathbox.select('#mainCartesian').set('scale', [scale.x+mag, scale.y+mag, scale.z+mag]);
+    });
+    document.getElementById('decrementScale').addEventListener("click", function(){
+      var scale = window.mathbox.select('#mainCartesian').get('scale');
+      var mag = -0.2;
+      window.mathbox.select('#mainCartesian').set('scale', [scale.x+mag, scale.y+mag, scale.z+mag]);
+    });
+    document.getElementById('incrementTop').addEventListener("click", function(){
+      var rot = window.mathbox.select('#mainCartesian').get('rotation');
+      var mag = 0.2;
+      window.mathbox.select('#mainCartesian').set('rotation', [rot.x+mag, rot.y+mag, rot.z+mag]);
+    });
+  };
 
 })();

@@ -26,7 +26,6 @@
   .cartesian({
     //range: [[-1, 1], [-1, 1], [-1, 1]],
     scale: [0.5, 0.5, 0.5],
-    position: [0, -1, 0]
   });
 
   var points = view.area({
@@ -120,7 +119,7 @@
   });
 
   var params = {
-    AR: false,
+    AR: true,
     renderer: mathbox.three.renderer
   };
 
