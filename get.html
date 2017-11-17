@@ -41,7 +41,7 @@
       var x = document.getElementsByTagName('head')[0];
       x.appendChild(s);
     }
-    var src = 'js/' + location.search.replace('?id=','');
+    var src = 'js/' + location.search.replace('?id=','') + '?hash=111111';
     script(src);
     console.log('src', src);
   </script>

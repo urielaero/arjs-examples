@@ -72,10 +72,14 @@
 
   //if (!params.AR) mathbox.three.camera.position.set(1.9235285045174615, 0.7048641117795541, -0.10372284520330993);
 
-  var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
-  arTool.animate();
+
   //window.scene = mathbox.three.scene;
-  window.math = mathbox;
-  window.view = view;
+
+  window.onload = function() {
+    var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
+    arTool.animate();
+    window.math = mathbox;
+    window.view = view;
+  }
 
 })();

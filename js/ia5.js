@@ -131,10 +131,11 @@
   if (!params.AR) three.camera.position.set(-0.15, 0.15, 3.6);
   window.scene = mathbox.three.scene;
   window.mathbox = mathbox;
-  var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
-  arTool.animate();
+
 
   window.onload = function(e){
+    var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
+    arTool.animate();
     document.getElementById('ui').style.display = 'block';
     document.getElementById('incrementScale').addEventListener("click", function(){
       var scale = window.mathbox.select('#mainCartesian').get('scale');
