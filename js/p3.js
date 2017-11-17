@@ -15,8 +15,28 @@
     position: [0.41035287236906653, 121.3604305884754, 18.57113163425204]
   }).cartesian({
     range: [[-10, 10], [-10, 10], [-10, 10]],
-    scale: [0.5, 0.5, 0.5],
+    scale: [0.2, 0.2, 0.2],
   });
+
+    colors = {
+      x: new THREE.Color(0xFF4136),
+      y: new THREE.Color(0x2ECC40),
+      z: new THREE.Color(0x0074D9)
+    };
+
+    view.axis({
+      color: colors.x,
+    });
+    view.axis({
+      axis: 2, // "y" also works
+      color: colors.y,
+    });
+    view.axis({
+      axis: 3,
+      color: colors.z,
+    });
+
+
 
   view.interval({
     range: [-50, 50],

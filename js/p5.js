@@ -15,6 +15,26 @@
     scale: [1, 1, 1],
   });
 
+    colors = {
+      x: new THREE.Color(0xFF4136),
+      y: new THREE.Color(0x2ECC40),
+      z: new THREE.Color(0x0074D9)
+    };
+
+    view.axis({
+      color: colors.x,
+    });
+    view.axis({
+      axis: 2, // "y" also works
+      color: colors.y,
+    });
+    view.axis({
+      axis: 3,
+      color: colors.z,
+    });
+
+
+
   view.interval({
     width: 300,
     centered: true,
