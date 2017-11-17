@@ -121,12 +121,12 @@
     ]
   },
   {
-    "name": "Gráficas de curvas de nivel",
+    "name": "Gráficas de superficies",
     "description": "Función de Rastrigin | De Jongs | hyper-ellipsoid",
     "id": "3",
     "topics": [
       {
-        "name": "Visualización de maximos y minimos",
+        "name": "Visualización de máximos y mínimos",
         "content": [
           {
             "name": "Función de Rastrigin",
