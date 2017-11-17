@@ -12,7 +12,7 @@
   .camera({
     proxy: true,
     position: [0.03873908969484122, 6.185452745368619, 9.525684942183485]
-  })
+  });
 
   var remap = function (v) { return Math.sqrt(0.1 + 0.1 * v); };
 
@@ -40,7 +40,7 @@
   view = view
   .cartesian({
     //range: [[-1, 1], [-1, 1], [-1, 1]],
-    scale: [.5, .5, .5],
+    scale: [0.5, 0.5, 0.5],
   });
 
   var points = view.area({
@@ -58,17 +58,19 @@
   });
 
   var colors = view.area({
+    rangeX: [-3, 3],
+    rangeY: [-3, 3],
     expr: function (emit, x, z, i, j, t) {
-      var y = fn1(x, z, t) * fn2(x, z, t);
+      var y = rastrigin1(x, z, t)-1;
 
       var r = Math.sin(y * 4) + y * y * y; 
       var g = (.5 - .5 * Math.cos(y * 3) + y * y) * .85;
       var b = y;
 
-      emit(r, g, b, 1.0);
+      emit(r, g, b, 0.9);
     },
-    width:  32,
-    height: 32,
+    width:  100,
+    height: 100,
     channels: 4,
     axes: [1, 3],
     live: false
@@ -77,9 +79,9 @@
   view.surface({
     shaded: true,
     points: '<<',
-    //colors: '<',
-    //color: 0xFFFFFF,
-    color: 'red'
+    colors: '<',
+    color: 0xFFFFFF,
+    //color: 'red'
   });
 
   view.surface({
