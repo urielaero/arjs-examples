@@ -10,10 +10,15 @@
       focus: 3,
     })
     .camera({
+      id: 'mainCamera',
       proxy: true,
       position: [0.03873908969484122, 6.185452745368619, 9.525684942183485]
     })
+    .cartesian4({
+      id: 'mainCartesian4',
+    })
     .cartesian({
+      id: 'mainCartesian',
       range: [[0, 1], [0, 1], [0, 1]],
       scale: [1, 2/3, 1],
     });
@@ -113,6 +118,7 @@
     window.onload = function() {
       var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
       arTool.animate();
-    }
+      window.activeButtons(mathbox);
+    };
 
 })();

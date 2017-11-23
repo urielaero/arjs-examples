@@ -33,8 +33,12 @@
       focus: 1,
     })
     //.group()
+    .cartesian4({
+      id: 'mainCartesian4',
+    })
     .cartesian({
       //position: [3, 0, 0], //clava un axis.
+      id: 'mainCartesian',
       range: [[-2, 2], [-1, 1], [-1, 1]],
       scale: [2, 1, 1],
     });
@@ -97,6 +101,7 @@
     window.onload = function() {
       var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
       arTool.animate();
-    }
+      window.activeButtons(mathbox);
+    };
 
 })();

@@ -24,6 +24,7 @@
 
   view = view
   .cartesian({
+    id: 'mainCartesian',
     //range: [[-1, 1], [-1, 1], [-1, 1]],
     scale: [0.5, 0.5, 0.5],
   });
@@ -129,6 +130,7 @@
   window.onload = function() {
     var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-  }
+    window.activeButtons(mathbox);
+  };
 
 })();

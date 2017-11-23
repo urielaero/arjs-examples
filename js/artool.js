@@ -11,6 +11,29 @@
     return mathbox;
   }
 
+  function activeButtons(mathbox, cartesian4) {
+    cartesian4 = cartesian4 || '#mainCartesian';
+    document.getElementById('ui').className += " show";
+    document.getElementById('incrementScale').addEventListener("click", function(){
+      var scale = mathbox.select(cartesian4).get('scale');
+      var mag = 0.2;
+      mathbox.select('#mainCartesian').set('scale', [scale.x+mag, scale.y+mag, scale.z+mag, scale.w +mag]);
+      console.log('scaleUp!');
+    });
+    document.getElementById('decrementScale').addEventListener("click", function(){
+      var scale = mathbox.select(cartesian4).get('scale');
+      var mag = -0.2;
+      mathbox.select('#mainCartesian').set('scale', [scale.x+mag, scale.y+mag, scale.z+mag, scale.w +mag]);
+      console.log('scaleDown!');
+    });
+    document.getElementById('incrementTop').addEventListener("click", function(){
+      var rot = mathbox.select('#mainCartesian').get('rotation');
+      var mag = 0.2;
+      mathbox.select('#mainCartesian').set('rotation', [rot.x+mag, rot.y+mag, rot.z+mag]);
+      console.log('rotate1');
+    });
+  }
+
   function Ar(camera, scene, params) {
     THREEx.ArToolkitContext.baseURL = './../data';
     if (window.location.origin.indexOf('github.io') != -1) {
@@ -105,7 +128,8 @@
       detectionMode: 'mono', //'mono',
       maxDetectionRate: 40,
       canvasWidth: 340, //mobile eficience
-      canvasHeight: 280
+      //canvasHeight: 280
+      canvasHeight: 340
     });
     // initialize it
     arToolkitContext.init(function onCompleted(){
@@ -180,5 +204,6 @@
 
   window.Ar = Ar;
   window.instanceMathBox = instanceMathBox;
+  window.activeButtons = activeButtons;
 
 })(window);

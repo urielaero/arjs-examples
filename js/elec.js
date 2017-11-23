@@ -187,6 +187,7 @@
   window.onload = function() {
     var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-  }
+    window.activeButtons(mathbox);
+  };
 
 })();

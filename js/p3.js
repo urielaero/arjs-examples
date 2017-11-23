@@ -14,6 +14,7 @@
      // position: [0.03873908969484122, 6.185452745368619, 10.525684942183485]
     position: [0.41035287236906653, 121.3604305884754, 18.57113163425204]
   }).cartesian({
+    id: 'mainCartesian',
     range: [[-10, 10], [-10, 10], [-10, 10]],
     scale: [0.2, 0.2, 0.2],
   });
@@ -78,8 +79,7 @@
   window.onload = function() {
     var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-    window.math = mathbox;
-    window.view = view;
-  }
+    window.activeButtons(mathbox);
+  };
 
 })();

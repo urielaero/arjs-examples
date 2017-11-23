@@ -11,6 +11,7 @@
     proxy: true,
     position: [-6.320009229020089, 3.3489745289281054, -0.2872281859469791]
   }).cartesian({
+    id: 'mainCartesian',
     range: [[-6, 6], [-3, 3], [-1, 1]],
     scale: [1, 1, 1],
   });
@@ -81,7 +82,8 @@
   window.onload = function() {
     var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
     arTool.animate();
-  }
+    window.activeButtons(mathbox);
+  };
 
   //window.scene = mathbox.three.scene;
   //window.math = mathbox;

@@ -65,7 +65,7 @@
   },
   {
     "name": "Gráficos de Ecuaciones Paramétricas",
-    "description": "Hélice | Espira | otros",
+    "description": "Hélice | Espiral | otros",
     "id": "2",
     "topics": [
       {
@@ -122,7 +122,7 @@
   },
   {
     "name": "Gráficas de superficies",
-    "description": "Función de Rastrigin | De Jongs | hyper-ellipsoid",
+    "description": "Función de Rastrigin | De Jongs | hiper elipsoide",
     "id": "3",
     "topics": [
       {
@@ -138,7 +138,7 @@
             "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia2.png",
             "id": "ia2.js"
           },{
-            "name": "Función hyper-ellipsoid",
+            "name": "Función hiper elipsoide",
             "preview": "https://urielaero.github.io/arjs-examples/img/previews/ia3.png",
             "id": "ia3.js"
           }

@@ -20,8 +20,9 @@
     position: [0, 0, 0]
   })
   .cartesian({
-      range: [[-10, 10], [-10, 10], [-10, 10]],
-      scale: [2, 2, 2],
+    id: 'mainCartesian',
+    range: [[-10, 10], [-10, 10], [-10, 10]],
+    scale: [2, 2, 2],
   });
 
 
@@ -98,7 +99,10 @@
 
   if (!params.AR) three.camera.position.set(-0.15, 0.15, 3.6);
 
-  var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
-  arTool.animate();
+  window.onload = function() {
+    var  arTool = new window.Ar(mathbox.three.camera, mathbox.three.scene, params);
+    arTool.animate();
+    window.activeButtons(mathbox);
+  };
 
 })();
