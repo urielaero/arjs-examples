@@ -35,6 +35,18 @@
   }
 
   function Ar(camera, scene, params) {
+    if (!THREEx) {
+      console.log('failed memory!');
+      var reload = document.getElementById('f-reload');
+      if (reload) {
+        reload.className = 'button reload';
+        reload.addEventListener("click", function(){
+          location.reload();
+        });
+      }
+
+      return ;
+    }
     THREEx.ArToolkitContext.baseURL = './../data';
     if (window.location.origin.indexOf('github.io') != -1) {
       THREEx.ArToolkitContext.baseURL = '/arjs-examples/data';

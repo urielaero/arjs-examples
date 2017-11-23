@@ -31,3 +31,12 @@ body{
 #ui.show{
   display: block !important;
 }
+
+#f-reload{
+  display: none;
+}
+.reload{
+  position: absolute;
+  bottom: 0;
+  display: block !important;
+}

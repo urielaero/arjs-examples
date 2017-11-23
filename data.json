@@ -37,12 +37,12 @@
           {
             "name": "Axis",
             "preview": "https://urielaero.github.io/arjs-examples/img/previews/v2.png",
-            "id": "vec1.js"
+            "id": "vec2.js"
           },
           {
             "name": "Axis/Gridx1",
             "preview": "https://urielaero.github.io/arjs-examples/img/previews/v1.png",
-            "id": "vec2.js"
+            "id": "vec1.js"
           },
           {
             "name": "Axis/Gridx2",
